@@ -1,0 +1,165 @@
+/* ----------- GLOBAL ----------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #ff3b3b, #8a0000 70%);
+    color: white;
+    font-family: "Poppins", Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Effet paillettes */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://i.imgur.com/OXEsQ8B.png');
+    opacity: 0.35;
+    animation: sparkle 6s linear infinite;
+}
+
+@keyframes sparkle {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* Étoiles animées */
+body::after {
+    content: "✦ ✦ ✧ ✧ ✦ ✧ ✦ ✧ ✦ ✧";
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    font-size: 22px;
+    opacity: 0.3;
+    animation: stars 7s infinite linear;
+}
+
+@keyframes stars {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-200px);
+    }
+}
+
+/* ----------- CONTAINER ----------- */
+
+.container {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* ----------- TITRES ----------- */
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 100, 100, 0.9);
+}
+
+/* ----------- INPUT ----------- */
+
+input {
+    padding: 14px;
+    width: 85%;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 2px solid #ff4d4d;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    backdrop-filter: blur(4px);
+    margin-bottom: 20px;
+}
+
+input::placeholder {
+    color: #ffd0d0;
+}
+
+/* ----------- BUTTONS ----------- */
+
+button {
+    padding: 14px 22px;
+    background: linear-gradient(45deg, #ff0000, #ff5252);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255, 80, 80, 0.8);
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 18px rgba(255, 120, 120, 1);
+}
+
+/* ----------- OPTIONS (QCM) ----------- */
+
+.option {
+    background: rgba(255, 255, 255, 0.08);
+    margin: 12px auto;
+    padding: 14px;
+    border-radius: 12px;
+    width: 85%;
+    cursor: pointer;
+    border: 1px solid rgba(255, 140, 140, 0.5);
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: rgba(255, 80, 80, 0.3);
+    transform: scale(1.03);
+}
+
+.option.selected {
+    background: rgba(255, 50, 50, 0.6);
+    border-color: white;
+}
+
+/* ----------- ERREUR ----------- */
+
+.error {
+    color: #ffb3b3;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* ----------- MOBILE FRIENDLY ----------- */
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    input,
+    .option,
+    button {
+        font-size: 17px;
+        width: 90%;
+    }
+}

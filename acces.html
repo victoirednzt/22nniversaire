@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire secret</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login">
+    <h2>🔒 Accès réservé</h2>
+
+    <div class="card">
+        <input id="name" type="text" placeholder="Ton prénom">
+
+        <h3>Question 1 :</h3>
+        <p>Quel est le thème de la soirée ?</p>
+        <select id="q1">
+            <option value="">-- Choisis --</option>
+            <option value="2">Autour du nombre 2</option>
+            <option value="pizza">Pizza</option>
+            <option value="minecraft">Minecraft</option>
+        </select>
+
+        <h3>Question 2 :</h3>
+        <p>Quel âge je fête ?</p>
+        <select id="q2">
+            <option value="">-- Choisis --</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+            <option value="22">22</option>
+            <option value="40">40 (oups)</option>
+        </select>
+
+        <button onclick="checkAccess()" class="btn">Valider</button>
+        <p id="error"></p>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
